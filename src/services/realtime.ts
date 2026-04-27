@@ -30,7 +30,7 @@ export function connectRealtime(): Pusher {
         Authorization: `Bearer ${token}`,
       },
     },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any)
 
   pusher.connection.bind('error', (err: unknown) => {
@@ -77,7 +77,7 @@ export function unsubscribe(channelName: string) {
 export function updateRealtimeAuth(token: string) {
   if (pusher) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ;(pusher as any).config.auth = {
+    ; (pusher as any).config.auth = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
