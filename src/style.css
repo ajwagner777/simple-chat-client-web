@@ -1,0 +1,104 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #0f1117;
+  --color-bg-2: #1a1d27;
+  --color-bg-3: #222536;
+  --color-bg-hover: #2a2e42;
+  --color-border: #2e3149;
+  --color-text: #e2e4f0;
+  --color-text-muted: #8b8fa8;
+  --color-primary: #6c63ff;
+  --color-primary-hover: #5a52e0;
+  --color-danger: #e05252;
+  --color-success: #52c07a;
+  --sidebar-width: 300px;
+  --radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#app {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  transition: background 0.15s;
+}
+button.btn-primary { background: var(--color-primary); color: #fff; }
+button.btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+button.btn-ghost { background: transparent; color: var(--color-text); }
+button.btn-ghost:hover:not(:disabled) { background: var(--color-bg-hover); }
+button.btn-danger { background: var(--color-danger); color: #fff; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+input, textarea {
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  padding: 0.55rem 0.85rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, textarea:focus { border-color: var(--color-primary); }
+input::placeholder, textarea::placeholder { color: var(--color-text-muted); }
+
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.error-msg { font-size: 0.8rem; color: var(--color-danger); margin-top: 0.25rem; }
+.success-msg { font-size: 0.85rem; color: var(--color-success); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.text-muted { color: var(--color-text-muted); }
+.text-sm { font-size: 0.8rem; }
+.text-xs { font-size: 0.72rem; }
+.font-semibold { font-weight: 600; }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.w-full { width: 100%; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
